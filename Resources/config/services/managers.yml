@@ -5,4 +5,3 @@ services:
         class:     %aiomedia_warehouse.manager.warehouse.class%
         arguments:
             entityManager:   @doctrine.orm.entity_manager
-#            securityContext: @security.context

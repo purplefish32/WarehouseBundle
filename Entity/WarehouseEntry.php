@@ -54,11 +54,19 @@ class WarehouseEntry
     
     /**
      * Attached entity class
-     * @var string $entity
+     * @var string $entityClass
      *
-     * @ORM\Column(name="entity", type="string", length=255)
+     * @ORM\Column(name="entity_class", type="string", length=255)
      */
-    protected $entity;
+    protected $entityClass;
+    
+    /**
+     * Attached entity id
+     * @var integer $entityId
+     *
+     * @ORM\Column(name="entity_id", type="integer")
+     */
+    protected $entityId;
     
     /**
      * Get id
@@ -154,22 +162,43 @@ class WarehouseEntry
     }
     
     /**
-     * Get entity
+     * Get entity class
      * @return string
      */
-    public function getEntity()
+    public function getEntityClass()
     {
-    	return $this->entity;
+    	return $this->entityClass;
     }
     
     /**
-     * Set entity
-     * @param string $entity
+     * Set entity class
+     * @param string $entityClass
      * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
      */
-    public function setEntity($entity)
+    public function setEntityClass($entityClass)
     {
-    	$this->entity = $entity;
+    	$this->entityClass = $entityClass;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get entity id
+     * @return integer
+     */
+    public function getEntityId()
+    {
+    	return $this->entityId;
+    }
+    
+    /**
+     * Set entity id
+     * @param integer $entityId
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
+    public function setEntityId($entityId)
+    {
+    	$this->entityId = $entityId;
     
     	return $this;
     }

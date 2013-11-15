@@ -64,7 +64,7 @@ class WarehouseManager
         return $path;
     }
     
-    public function getPath(StorableInterface $storable)
+    public function getPath(StorableInterface $storable, $relative = false)
     {
         $filename = trim($storable->getFilename(), ' \\/');
         if (empty($filename)) {
@@ -97,7 +97,7 @@ class WarehouseManager
         return $path;
     }
     
-    public function getUrl(StorableInterface $storable)
+    public function getUrl(StorableInterface $storable, $schemeRelative = false)
     {
     	
     }
@@ -137,9 +137,17 @@ class WarehouseManager
      */
     public function getEntry(StorableInterface $storable)
     {
-        $wEntry = null;
+        $dql  = 'SELECT we ';
+        $dql .= 'FROM AIOMedia\WarehouseBundle\Entity\WarehouseEntry AS we ';
+        $dql .= 'WHERE we.entityClass = :entityClass ';
+        $dql .= '  AND we.entityId = :entityId ';
+        $dql .= 'LIMIT 0, 1';
         
-        return $wEntry;
+        $query = $this->em->createQuery($dql);
+        $query->setParameter('entityClass', get_class($storable));
+        $query->setParameter('entityId', $storable->getId());
+        
+        return $query->getResult();
     }
     
     private function addEntry(StorableInterface $storable)
@@ -147,7 +155,14 @@ class WarehouseManager
         $wEntry = new WarehouseEntry();
         
         $wEntry->setFilePath($storable->getFilePath());
-        $wEntry->setEntity(get_class($storable));
+        
+        // hash file
+        $filename = $this->getPath($storable);
+        $hash = $this->hash($filename);
+        $wEntry->setFileHash($hash);
+        
+        $wEntry->setEntityClass(get_class($storable));
+        $wEntry->setEntityId($storable->getId());
         
         $this->em->persist($wEntry);
         $this->em->flush();
