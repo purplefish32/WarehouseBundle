@@ -69,11 +69,20 @@ class WarehouseEntry
     	return $this->id;
     }
     
+    /**
+     * Get file path
+     * @return string
+     */
     public function getFilePath()
     {
     	return $this->filePath;
     }
     
+    /**
+     * Set file path
+     * @param string $filePath
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
     public function setFilePath($filePath)
     {
     	$this->filePath = $filePath;
@@ -81,11 +90,20 @@ class WarehouseEntry
     	return $this;
     }
     
+    /**
+     * Get file hash
+     * @return string
+     */
     public function getFileHash()
     {
     	return $this->fileHash;
     }
     
+    /**
+     * Set file hash
+     * @param string $fileHash
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
     public function setFileHash($fileHash)
     {
     	$this->fileHash = $fileHash;
@@ -93,35 +111,62 @@ class WarehouseEntry
     	return $this;
     }
     
+    /**
+     * Get date created
+     * @return \AIOMedia\WarehouseBundle\Entity\DateTime
+     */
     public function getDateCreated()
     {
     	return $this->dateCreated;
     }
     
-    public function setDateCreated($dateCreated)
+    /**
+     * Set date created
+     * @param \DateTime $dateCreated
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
+    public function setDateCreated(\DateTime $dateCreated)
     {
     	$this->dateCreated = $dateCreated;
     
     	return $this;
     }
     
+    /**
+     * Get date modified
+     * @return \AIOMedia\WarehouseBundle\Entity\DateTime
+     */
     public function getDateModified()
     {
     	return $this->dateModified;
     }
     
-    public function setDateModified($dateModified)
+    /**
+     * Set date modified
+     * @param \DateTime  $dateModified
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
+    public function setDateModified(\DateTime $dateModified)
     {
     	$this->dateModified = $dateModified;
     
     	return $this;
     }
     
+    /**
+     * Get entity
+     * @return string
+     */
     public function getEntity()
     {
     	return $this->entity;
     }
     
+    /**
+     * Set entity
+     * @param string $entity
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     */
     public function setEntity($entity)
     {
     	$this->entity = $entity;
@@ -130,6 +175,9 @@ class WarehouseEntry
     }
     
     /**
+     * Set date created with current date
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     * 
      * @ORM\PrePersist()
      */
     public function setDateCreatedValue()
@@ -140,6 +188,9 @@ class WarehouseEntry
     }
     
     /**
+     * Set date modified with current date
+     * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry
+     * 
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
