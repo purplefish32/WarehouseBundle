@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('hash_method')
                     ->defaultValue('sha1')
                     ->validate()
-                        ->ifNotInArray(array ('sha1'))
+                        ->ifNotInArray(hash_algos())
                             ->thenInvalid('Invalid hash method %s.')
                     ->end()
                 ->end()

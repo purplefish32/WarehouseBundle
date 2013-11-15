@@ -7,6 +7,11 @@ use Doctrine\ORM\EntityManager;
 use AIOMedia\WarehouseBundle\Entity\StorableInterface;
 use AIOMedia\WarehouseBundle\Entity\WarehouseEntry;
 
+/**
+ * Warehouse manager
+ * @author Corum
+ *
+ */
 class WarehouseManager
 {
     /**
@@ -92,6 +97,16 @@ class WarehouseManager
         return $path;
     }
     
+    public function getUrl(StorableInterface $storable)
+    {
+    	
+    }
+    
+    /**
+     * Store a new Storable into the warehouse
+     * @param  \AIOMedia\WarehouseBundle\Entity\StorableInterface $storable
+     * @return \AIOMedia\WarehouseBundle\Manager\WarehouseManager
+     */
     public function store(StorableInterface $storable)
     {
         $file = $storable->getFile();
@@ -117,7 +132,7 @@ class WarehouseManager
     
     /**
      * Get entry in the warehouse for this Sortable
-     * @param StorableInterface $storable
+     * @param  \AIOMedia\WarehouseBundle\Entity\StorableInterface $storable
      * @return \AIOMedia\WarehouseBundle\Entity\WarehouseEntry|null
      */
     public function getEntry(StorableInterface $storable)
@@ -145,6 +160,7 @@ class WarehouseManager
         // Retrieve warehouse entry
         $wEntry = $this->getEntry($storable);
         if ($wEntry) {
+        	// Entry found => delete from DB
             $this->em->remove($wEntry);
             $this->em->flush();
         }
@@ -154,6 +170,8 @@ class WarehouseManager
     
     private function hash($filename)
     {
+    	// In PHP manual, an user tells it throws errors for files > 2GB
+    	// Find an other method to hash files
         $hash = hash_file($this->config['hash_method'], $filename);
         
         return $hash;
@@ -164,6 +182,11 @@ class WarehouseManager
         
     }
     
+    /**
+     * Check if Storable issets in file system, also check file integry with hash if $checkHash
+     * @param StorableInterface $storable
+     * @param string $checkHash
+     */
     public function check(StorableInterface $storable, $checkHash = false)
     {
     

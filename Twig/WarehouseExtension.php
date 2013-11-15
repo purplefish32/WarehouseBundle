@@ -2,11 +2,15 @@
 
 namespace AIOMedia\WarehouseBundle\Twig;
 
+use AIOMedia\WarehouseBundle\Entity\StorableInterface;
+
 class WarehouseExtension extends \Twig_Extension
 {
+	protected $warehouseManager;
+	
     public function getFunctions()
     {
-        return array(
+        return array (
             new \Twig_SimpleFunction('warehouse_path', 'getPath'),
             new \Twig_SimpleFunction('warehouse_check', 'check'),
         );
@@ -17,12 +21,12 @@ class WarehouseExtension extends \Twig_Extension
         return 'warehouse';
     }
     
-    public function getPath()
+    public function getPath(StorableInterface $storable, $relative = false)
     {
         
     }
     
-    public function check()
+    public function check(StorableInterface $storable, $schemeRelative = false)
     {
         
     }
