@@ -14,7 +14,7 @@
     "autoload": {
         "psr-0": { 
             "AIOMedia\\WarehouseBundle\\": "."
-        },
+        }
     },
     "target-dir": "AIOMedia/WarehouseBundle"
 }
