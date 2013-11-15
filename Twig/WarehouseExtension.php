@@ -21,12 +21,12 @@ class WarehouseExtension extends \Twig_Extension
         return 'warehouse';
     }
     
-    public function getPath(StorableInterface $storable, $relative = false)
+    public function getPath(StorableInterface $storable)
     {
         
     }
     
-    public function check(StorableInterface $storable, $schemeRelative = false)
+    public function check(StorableInterface $storable, $checkHash = false)
     {
         
     }

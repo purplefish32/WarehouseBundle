@@ -64,7 +64,7 @@ class WarehouseManager
         return $path;
     }
     
-    public function getPath(StorableInterface $storable, $relative = false)
+    public function getPath(StorableInterface $storable)
     {
         $filename = trim($storable->getFilename(), ' \\/');
         if (empty($filename)) {
@@ -95,11 +95,6 @@ class WarehouseManager
         $path .= $filename;
         
         return $path;
-    }
-    
-    public function getUrl(StorableInterface $storable, $schemeRelative = false)
-    {
-    	
     }
     
     /**
