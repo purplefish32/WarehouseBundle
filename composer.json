@@ -1,20 +1,17 @@
 {
-    "name": "aiomedia/warehouse-bundle",
-    "version": "0.0.1",
-    "license": "proprietary",
-    "type": "bundle",
-    "description": "Warehouse Bundle",
-    "authors": [
-        {
-            "name": "Axel Penin",
-            "email": "penin.axel@gmail.com",
-            "homepage": ""
-        }
-    ],
-    "autoload": {
-        "psr-0": { 
-            "AIOMedia\\WarehouseBundle\\": "."
-        }
-    },
-    "target-dir": "AIOMedia/WarehouseBundle"
+	"name" : "aiomedia/warehouse-bundle",
+	"version" : "0.0.1",
+	"type" : "bundle",
+	"description" : "Warehouse Bundle",
+	"authors" : [{
+			"name" : "Axel Penin",
+			"email" : "penin.axel@gmail.com"
+		}
+	],
+	"autoload" : {
+		"psr-0" : {
+			"AIOMedia\\WarehouseBundle\\" : "."
+		}
+	},
+	"target-dir" : "AIOMedia/WarehouseBundle"
 }
