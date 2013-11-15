@@ -1,0 +1,6 @@
+# Twig extensions
+services:
+    aiomedia_warehouse.twig.extension.warehouse:
+        class: AIOMedia\WarehouseBundle\Twig\WarehouseExtension
+        tags:
+            - { name: twig.extension }

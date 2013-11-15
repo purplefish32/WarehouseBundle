@@ -1,0 +1,3 @@
+parameters:
+    # Managers
+    aiomedia_warehouse.manager.warehouse.class: AIOMedia\WarehouseBundle\Manager\WarehouseManager

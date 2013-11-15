@@ -1,0 +1,20 @@
+{
+    "name": "aiomedia/warehouse-bundle",
+    "version": "0.0.1",
+    "license": "",
+    "type": "bundle",
+    "description": "Warehouse Bundle",
+    "authors": [
+        {
+            "name": "Axel Penin",
+            "email": "penin.axel@gmail.com",
+            "homepage": ""
+        }
+    ],
+    "autoload": {
+        "psr-0": { 
+            "AIOMedia\\WarehouseBundle\\": "."
+        },
+    },
+    "target-dir": "AIOMedia/WarehouseBundle"
+}
