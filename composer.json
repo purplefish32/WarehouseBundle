@@ -1,7 +1,7 @@
 {
     "name": "aiomedia/warehouse-bundle",
     "version": "0.0.1",
-    "license": "",
+    "license": "proprietary",
     "type": "bundle",
     "description": "Warehouse Bundle",
     "authors": [
