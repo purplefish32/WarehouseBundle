@@ -68,7 +68,7 @@ class WarehouseManager
     {
         $filename = trim($storable->getFilename(), ' \\/');
         if (empty($filename)) {
-            throw new Exception('Missing filename.');
+            throw new \Exception('Missing filename.');
         }
         
         // Add root part
