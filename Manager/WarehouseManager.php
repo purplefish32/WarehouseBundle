@@ -56,6 +56,10 @@ class WarehouseManager
         return $this;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getBasePath()
     {
     	$path = rtrim($this->config['root'], ' \\/');
@@ -64,6 +68,12 @@ class WarehouseManager
         return $path;
     }
     
+    /**
+     * 
+     * @param \AIOMedia\WarehouseBundle\Entity\StorableInterface $storable
+     * @throws \Exception
+     * @return string
+     */
     public function getPath(StorableInterface $storable)
     {
         $filename = trim($storable->getFilename(), ' \\/');
@@ -117,6 +127,11 @@ class WarehouseManager
         return $this;
     }
     
+    /**
+     * Remove storable from the warehouse
+     * @param \AIOMedia\WarehouseBundle\Entity\StorableInterface $storable
+     * @return \AIOMedia\WarehouseBundle\Manager\WarehouseManager
+     */
     public function delete(StorableInterface $storable)
     {
         // Remove entry from the warehouse
@@ -145,6 +160,11 @@ class WarehouseManager
         return $query->getResult();
     }
     
+    /**
+     * Add new entry in the warehouse for this Sortable
+     * @param \AIOMedia\WarehouseBundle\Entity\StorableInterface $storable
+     * @return \AIOMedia\WarehouseBundle\Manager\WarehouseManager
+     */
     private function addEntry(StorableInterface $storable)
     {
         $wEntry = new WarehouseEntry();
