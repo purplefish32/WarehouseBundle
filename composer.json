@@ -2,6 +2,7 @@
 	"name" : "aiomedia/warehouse-bundle",
 	"version" : "0.0.1",
 	"type" : "bundle",
+	"license": "MIT",
 	"description" : "Warehouse Bundle",
 	"authors" : [{
 			"name" : "Axel Penin",
