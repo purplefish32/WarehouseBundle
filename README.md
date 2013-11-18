@@ -10,7 +10,7 @@ File storage management for Symfony 2 applications
 
 ## License
 
-TODO : surely a MIT or Apache 2 license
+TODO : Most probably an MIT or Apache 2 license
 
 ## Authors
 
